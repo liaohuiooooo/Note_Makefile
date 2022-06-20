@@ -1,8 +1,5 @@
-SHELL=/bin/bash
-
-cool:
-	@echo "SHELL : ${SHELL}"
-
-all:
-	cd ..
-	echo `pwd`
+SUBDIRS=foo bar baz
+subdirs:
+	for dir in ${SUBDIRS};do\
+		$(MAKE) -C $$dir;\
+	done
